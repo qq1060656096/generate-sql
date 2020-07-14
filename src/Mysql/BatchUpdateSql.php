@@ -16,7 +16,7 @@ class BatchUpdateSql extends SqlAbstract
      * @param string $tableName
      * @param array $where
      * @param array $data
-     * @param $field
+     * @param string $field
      */
     public function __construct($tableName, array $where, array $data, $field)
     {
