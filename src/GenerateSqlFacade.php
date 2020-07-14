@@ -16,7 +16,7 @@ class GenerateSqlFacade
      * @param string $field
      * @return BatchUpdateSql
      */
-    public function getMysqlBatchUpdateSql($tableName, array $where, array $data, $field)
+    public static function getMysqlBatchUpdateSql($tableName, array $where, array $data, $field)
     {
         $obj = new BatchUpdateSql($tableName, $where, $data, $field);
         return $obj;

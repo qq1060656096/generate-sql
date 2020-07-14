@@ -21,7 +21,7 @@
 
 ```php
 <?php
-use Zwei\GenerateSql\Mysql\BatchUpdateSql;
+use Zwei\GenerateSql\GenerateSqlFacade;
 $data = [
     [
         'id' => 1,
@@ -47,7 +47,7 @@ $where = [
     ],
 ];
 $field = 'id';
-$obj = new BatchUpdateSql('test', $where, $data, $field);
+$obj = GenerateSqlFacade::getMysqlBatchUpdateSql('test', $where, $data, $field);
 var_dump("\n", $obj->getSql(), $obj->getPlaceholderSql(), $obj->getPlaceholderParams());
 /*
 string(257) "update test set`name`=CASE id  WHEN 1 THEN 'andy.update.1' WHEN 2 THEN 'yoki.update.2' end,`age`=CASE id  WHEN 1 THEN 110.6 WHEN 2 THEN 4.5 end WHERE `name`=CASE id  WHEN 1 THEN 'andy' WHEN 2 THEN 'yoki' end,`age`=CASE id  WHEN 1 THEN 110 WHEN 2 THEN 4 end;"
